@@ -1,6 +1,7 @@
 package com.example.skprzepisy;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,8 @@ public class ListaPrzepisowActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        String kategoriaPrzepisu = getIntent().getStringExtra("KATEGORIA");
+
+
     }
 }

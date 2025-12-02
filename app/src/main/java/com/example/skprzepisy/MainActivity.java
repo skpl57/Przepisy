@@ -37,8 +37,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         view.setBackgroundColor(Color.GREEN);
-                        Toast.makeText(MainActivity.this, "Wybrano kategorię " + i, Toast.LENGTH_SHORT).show();
+                        String kategoria = adapterView.getItemAtPosition(i).toString();
+                        Toast.makeText(MainActivity.this, "Wybrano kategorię: " + kategoria, Toast.LENGTH_SHORT).show();
+
                         Intent intencja = new Intent(MainActivity.this, ListaPrzepisowActivity.class);
+                        intencja.putExtra("KATEGORIA", kategoria);
                         startActivity(intencja);
                     }
                 }
