@@ -2,14 +2,14 @@ package com.example.skprzepisy;
 
 import java.util.ArrayList;
 
-public class Przepisy {
+public class Przepis {
     private String nazwaPrzepisu;
     private String kategoria;
     private int idObrazka;
     private ArrayList<String> skladniki = new ArrayList<>();
     private String opis;
 
-    public Przepisy(String nazwaPrzepisu) {
+    public Przepis(String nazwaPrzepisu) {
         this.nazwaPrzepisu = nazwaPrzepisu;
         kategoria = "ciasta";
         idObrazka = R.drawable.piernik;
@@ -17,7 +17,16 @@ public class Przepisy {
         opis = "";
     }
 
-    public Przepisy(String nazwaPrzepisu, String kategoria, int idObrazka, ArrayList<String> skladniki, String opis) {
+    public Przepis(String nazwaPrzepisu, String kategoria, int idObrazka) {
+        this.nazwaPrzepisu = nazwaPrzepisu;
+        this.kategoria = kategoria;
+        skladniki = new ArrayList<>();
+        skladniki.add("cokolwiek");
+        this.opis = "Dasz radę :D";
+        this.idObrazka = idObrazka;
+    }
+
+    public Przepis(String nazwaPrzepisu, String kategoria, int idObrazka, ArrayList<String> skladniki, String opis) {
         this.nazwaPrzepisu = nazwaPrzepisu;
         this.kategoria = kategoria;
         this.idObrazka = idObrazka;

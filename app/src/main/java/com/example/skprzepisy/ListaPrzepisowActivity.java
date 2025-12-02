@@ -1,6 +1,8 @@
 package com.example.skprzepisy;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -8,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
 
 public class ListaPrzepisowActivity extends AppCompatActivity {
 
@@ -23,6 +27,14 @@ public class ListaPrzepisowActivity extends AppCompatActivity {
         });
         String kategoriaPrzepisu = getIntent().getStringExtra("KATEGORIA");
 
+        ArrayList<Przepis> przepisy = RepozytoriumPrzepisow.getPrzepisy();
+        ListView listView = findViewById(R.id.przedmiotyLV);
+        ArrayAdapter<Przepis> arrayAdapter = new ArrayAdapter<>(
+                ListaPrzepisowActivity.this,
+                android.R.layout.simple_list_item_1,
+                przepisy
+        );
+        listView.setAdapter(arrayAdapter);
 
     }
 }
