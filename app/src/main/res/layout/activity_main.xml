@@ -18,11 +18,19 @@
         android:layout_margin="8dp"
         android:text="Wybierz kategorię przepisu" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000" />
+
     <ListView
         android:id="@+id/kategorieLV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:entries="@array/kategorie_string"
+        android:divider="#000"
+        android:dividerHeight="1dp"
         />
 
 </LinearLayout>

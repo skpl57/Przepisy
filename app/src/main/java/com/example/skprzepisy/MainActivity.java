@@ -1,6 +1,11 @@
 package com.example.skprzepisy;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ListView listViewKategorie;
 
 
     @Override
@@ -22,5 +28,20 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        listViewKategorie = findViewById(R.id.kategorieLV);
+
+        listViewKategorie.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        view.setBackgroundColor(Color.GREEN);
+                        Toast.makeText(MainActivity.this, "Wybrano kategorię " + i, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+
+
     }
 }
